@@ -1,0 +1,22 @@
+﻿coluna,tabela,unidade,definicao
+ano_mes,df_orders / df_combined,texto AAAA-MM,Mes da compra (order_purchase_timestamp). Chave temporal padrao do projeto.
+ano,df_combined,inteiro,Ano da compra.
+qtd_itens,df_combined,inteiro,Numero de linhas de item no pedido (quantidade comprada).
+qtd_produtos_distintos,df_combined,inteiro,Produtos diferentes (product_id) no pedido.
+qtd_sellers_distintos,df_combined,inteiro,Vendedores diferentes atendendo o mesmo pedido.
+valor_produtos,df_combined,R$,Soma de price dos itens do pedido (faturamento de mercadoria).
+valor_frete,df_combined,R$,Soma de freight_value dos itens do pedido.
+valor_itens_total,df_combined,R$,valor_produtos + valor_frete. Valor esperado do pedido.
+valor_total_pago,df_combined,R$,Soma de payment_value do pedido (todos os meios).
+qtd_parcelas,df_combined,inteiro,Maior numero de parcelas entre os pagamentos do pedido.
+qtd_meios_pagamento,df_combined,inteiro,Quantidade de meios de pagamento distintos usados.
+tipo_pagamento,df_combined,texto,Meio de pagamento que concentra o MAIOR valor do pedido.
+valor_voucher,df_combined,R$,Parcela do pedido paga com voucher (0 se nao houve).
+usou_voucher,df_combined,booleano,True se qualquer parte do pedido foi paga com voucher.
+review_score_medio,df_combined,decimal,Media das notas do pedido (pedidos com mais de um review).
+qtd_reviews,df_combined,inteiro,Quantidade de avaliacoes distintas do pedido.
+prazo_entrega_dias,df_combined,dias,Entrega ao cliente menos data da compra. Nulo se nao entregue.
+atraso_dias,df_combined,dias,"Entrega real menos data estimada. Positivo = atraso, negativo = adiantado."
+entrega_atrasada,df_combined,booleano,True se atraso_dias > 0. Nulo (nao False) para pedidos nao entregues.
+product_category_name_english,df_products,texto,Traducao oficial (Kaggle) da categoria. Fallback = nome original em pt-br quando falta traducao.
+product_category_name_pt,df_products,texto,Nome amigavel em portugues usado no relatorio/apresentacao. Definido para as 10 categorias de maior faturamento; demais usam fallback automatico (ingles Title Case).
